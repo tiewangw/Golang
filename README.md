@@ -112,13 +112,25 @@ int的其他类型
 | runc | 有       | 与int32一样 | -2^31 ~ 2^63-1 | 等价int32，编码为Unicode |
 | byte | 无       | 与uint8一样 | 0 ~ 255        | 当存储字符时用byte       |
 
+##### 6.2 整型的使用细节
+
+​		1）如何在程序查看某个变量的字节大小和数据类型？
+
+判断数据类型 fmt.Printf
+
+![1605449338668](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605449338668.png)
+
+输出结果：
+
+![1605449363839](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605449363839.png)
+
+​	2）Golang程序中整型变量在使用时，遵守保小不保大的原则，即：在保证程序正确运行下，尽量   
 
 
 
-
-
-
-
+```go
+var age byte = 90
+```
 
 
 
