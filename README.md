@@ -53,31 +53,31 @@ golang中文文档  https://studygolang.com/pkgdoc
 
 方法3 : 省略var ，注意 :=左边的变量不能是已经声明过的，否则会导致编译错误
 
-![1605189597917](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605189597917.png)
+![1605189597917](src\images\1605189597917.png)
 
 运行结果
 
-![1605189634131](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605189634131.png)
+![1605189634131](src\images\1605189634131.png)
 
 
 
 ##### 多变量声明
 
-![1605190391445](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605190391445.png)
+![1605190391445](src\images\1605190391445.png)
 
 运行结果
 
-![1605190429099](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605190429099.png)
+![1605190429099](src\images\1605190429099.png)
 
 
 
 ##### 一次声明多个全局变量
 
-![1605190957778](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605190957778.png)
+![1605190957778](src\images\1605190957778.png)
 
 运行结果
 
-![1605191002600](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605191002600.png)
+![1605191002600](src\images\1605191002600.png)
 
 
 
@@ -118,11 +118,11 @@ int的其他类型
 
 判断数据类型 fmt.Printf
 
-![1605449338668](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605449338668.png)
+![1605449338668](src\images\1605449338668.png)
 
 输出结果：
 
-![1605449363839](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605449363839.png)
+![1605449363839](src\images\1605449363839.png)
 
 ​	2）Golang程序中整型变量在使用时，遵守保小不保大的原则，即：在保证程序正确运行下，尽量   
 
@@ -157,11 +157,11 @@ var age byte = 90
 
 ​	4)通常情况下，应该使用float64，因为它比float32更精确。**【开发中推荐使用float64】**
 
-![1605533339130](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605533339130.png)
+![1605533339130](src\images\1605533339130.png)
 
 输出结果
 
-![1605533371068](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605533371068.png)
+![1605533371068](src\images\1605533371068.png)
 
 
 
@@ -171,15 +171,45 @@ var age byte = 90
 
 
 
-![1605792167917](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605792167917.png)
+![1605792167917](src\images\1605792167917.png)
 
 
 
 输出结果
 
-![1605792231726](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1605792231726.png)
+![1605792231726](src\images\1605792231726.png)
 
+###### 	字符型使用细节
 
+​			1）字符常量用单引号括起来的单个字符。
+
+​						例如：var c1 byte = 'a'
+
+​									var c2 int = '中'
+
+​									var c3 byte = '9'
+
+​			2）Go中使用转义字符 ‘\’来将其后的字符转变为特殊字符型常量。
+
+​			3）Go语言的字符使用UTF-8编码，英文字母1个字节，汉字3个字节。
+
+​					查询UTF-8码值的网址：http://www.mytju.com/classcode/tools/encode_utf8.asp
+
+​			4）fmt.Printf + %c 会输出该数字对应的unicode字符编码：  ,不能用fmt.Println
+
+![1606485012845](src\images\1606485012845.png)
+
+​			5）字符类型时可以运算的，相当于一个整数，因为它都有对应的Unicode码。
+
+###### 字符类型的本质
+
+​	1） 字符类型存储到计算机中，需要将字符对应的码值（整数）找出来。
+
+​				存储： 字符 --> 对应码 -->二进制 -->存储
+
+​				读取：二进制 -->对应码 -->字符	-->读取
+
+​	2）Go语言的编码都统一成UTF-8 。非常方便，再也没有乱码的困扰了。
 
 
 

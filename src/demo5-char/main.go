@@ -29,7 +29,11 @@ func main(){
 	// var d byte = '北'
 	//fmt.Println("d = ", d)    // constant 21271 overflows byte
 	var d int = '北'
-	fmt.Printf("北 的ASCII码是 %d ",d)
+	fmt.Printf("北 的ASCII码是 %d \n",d)
+
+
+	var e int  = 29579
+	fmt.Printf("e = %c",e);	//29579 -->王
 
 
 
