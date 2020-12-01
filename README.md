@@ -53,7 +53,7 @@ golang中文文档  https://studygolang.com/pkgdoc
 
 方法3 : 省略var ，注意 :=左边的变量不能是已经声明过的，否则会导致编译错误
 
-![1605189597917](src\images\1605189597917.png)
+![1605189597917](src/images/1605189597917.png)
 
 运行结果
 
