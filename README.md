@@ -243,23 +243,23 @@ var age byte = 90
 
 ###### 		Go中数据类型不能自动转换，需要显示转换
 
-![1608458843464](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1608458843464.png)
+![1608458843464](src/images/1608458843464.png)
 
 
 
 输出结果：无法自动转换
 
-![1608458857277](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1608458857277.png)
+![1608458857277](src/images/1608458857277.png)
 
 
 
 **显示转换后**
 
-![1608459077238](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1608459077238.png)
+![1608459077238](src/images/1608459077238.png)
 
 输出结果
 
-![1608459049249](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1608459049249.png)
+![1608459049249](src/images/1608459049249.png)
 
 
 
