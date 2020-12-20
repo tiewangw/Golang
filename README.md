@@ -239,15 +239,35 @@ var age byte = 90
 
 
 
+##### 6.6 基本数据类型的转换
+
+###### 		Go中数据类型不能自动转换，需要显示转换
+
+![1608458843464](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1608458843464.png)
 
 
 
+输出结果：无法自动转换
+
+![1608458857277](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1608458857277.png)
 
 
 
+**显示转换后**
+
+![1608459077238](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1608459077238.png)
+
+输出结果
+
+![1608459049249](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1608459049249.png)
 
 
 
+###### 注意事项
 
-
+```shell
+在转换中，比如将int64转成int8【-128---127 】，编译时不会报错，
+只是转换的结果是按溢出处理，和我们希望的结果不一样。
+因此在转换时，需要考虑范围.
+```
 
