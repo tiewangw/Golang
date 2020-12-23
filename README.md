@@ -3,7 +3,9 @@ golang官网 https://golang.google.cn/
 
 golang中文文档  https://studygolang.com/pkgdoc
 
+[Go by Example](https://gobyexample.com/)
 
+[Go 101 电子书](https://go101.org/article/101.html)
 
 #### 1、Golang环境变量配置及其作用:
 
@@ -271,3 +273,81 @@ var age byte = 90
 因此在转换时，需要考虑范围.
 ```
 
+
+
+##### 6.7 基本数据类型和string的转换
+
+```go
+
+package main
+
+import "fmt"
+
+func main(){
+
+	var num1 int32 = 456
+
+	var num2  float32  = 43.1
+
+	var b1 bool = false
+
+	var b2 byte = 'f'
+
+	var str string
+
+	// 基本数据类型转换成string 方法1：使用fmt.Sprintf
+	str = fmt.Sprintf("%d",num1)
+	fmt.Printf("str type %T str=%q\n",str,str)	//str type string str="456"
+
+	str = fmt.Sprintf("%f",num2)
+	fmt.Printf("str type %T str=%q\n",str,str)	//str type string str="43.099998"
+
+	str = fmt.Sprintf("%t",b1)
+	fmt.Printf("str type %T str=%q\n",str,str)	//str type string str="false"
+
+	str = fmt.Sprintf("%c",b2)
+	fmt.Printf("str type %T str=%q\n",str,str)	//str type string str="f"
+
+    
+    
+    // 基本数据类型转换成string 方法2：使用strconv包
+	str = strconv.FormatInt(int64(num1),10)
+	fmt.Printf("str type %T str=%q\n",str,str)	//
+
+	// 5表示小数位数，64 表示float64
+	str = strconv.FormatFloat(num2,'f',5,64)
+	fmt.Printf("str type %T str=%q\n",str,str)	//
+
+	str = strconv.FormatBool(b1)
+	fmt.Printf("str type %T str=%q\n",str,str)	//
+
+	str = strconv.FormatByte(b2)
+	fmt.Printf("str type %T str=%q\n",str,str)	//
+
+}
+
+```
+
+**格式化参数**
+
+![1608700134842](src/images/1608700134842.png)
+
+
+
+**string转基本数据类型**
+
+```go
+func main() {
+
+		var str string = "true"
+
+		var b bool = true
+
+		b,_ = strconv.ParseBool(str)
+		fmt.Printf("b type %T , b=%v\n",b,b)	//b type bool , b=true
+
+}
+
+```
+
+![1608701047601](src/images/1608701047601.png)
