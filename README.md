@@ -45,8 +45,6 @@ golang中文文档  https://studygolang.com/pkgdoc
 
 ​			方法2. go run源码
 
-
-
 #### 5、Go变量使用的3种方式
 
 方法1 :指定变量类型，声明后若不赋值，使用默认值
