@@ -552,9 +552,62 @@ func main() {
 
 
 
+#### 11、Go分支流程
 
+##### 			11.1 if-else注意事项
 
+```go
+package main
 
+import "fmt"
+
+func main() {
+   var a int = 100;
+ 
+    //注意事项1： 官方建议把(a < 20)写成 a < 20 ，不带（）
+   //注意事项2：{}必须有
+   if a < 20 {
+       fmt.Printf("a 小于 20\n" );
+    //注意事项3：go中条件表达式不能是赋值语句
+//   } else if a = 3{  
+//       fmt.Printf("a 不小于 20\n" );
+    //注意事项4：else}不能换行
+   } else {  
+       fmt.Printf("a 不小于 20\n" );
+   }
+   fmt.Printf("a 的值为 : %d\n", a);
+
+}
+```
+
+​	
+
+##### 		11.2 switch
+
+​					11.2.1	case/switch后是一个表达式（常量、变量或一个有返回值的函数等）
+
+​					11.2.2	case后的各个表达式的值的数据类型必须和switch的表达式数据类型一致
+
+​					11.2.3	case后面可以带多个表达式，使用逗号间隔
+
+​					11.2.4	case后面的表达式如果是常量，则不能重复
+
+​					11.2.5	**case后面不需要带break**
+
+​					11.2.6	default语句不是必须的
+
+​					11.2.7	switch后也可以不带表达式，类似if-else分支来使用
+
+​					11.2.8	switch后也可以直接声明/定义一个变量，分号结束，不推荐
+
+​					11.2.9	switch穿透（fallthrough），如果在case语句块增加fallthrough，则会继续执行下一个case
+
+​					11.1.10	Type Switch：可以用type-switch判断某个interface变量中实际指向的变量类型
+
+##### 			11.3	switch和if-else的区别
+
+- ​					如果判断的具体数值不多，而且符合整数、浮点数、字符、字符串这几种类型，使用switct
+- ​                    对区间判断和结果为bool类型的判断使用if	
 
 
 
