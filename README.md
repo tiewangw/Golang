@@ -728,11 +728,55 @@ func sum(n1 int,args... int) sum int {
 
 
 
-##### 12.3
+##### 12.3 init函数
 
+1. ​		每一个源文件都可以包含一个init函数，该函数会在main函数执行前，被Go运行框架调用，即init会在main函数前被调用。
+2. ​		如果一个文件同时包含全局变量、init函数和main函数，则执行的流程是**全局变量->init函数->main函数**
 
+##### 12.4 匿名函数
 
+​		Go支持匿名函数，匿名函数就是没有名字的函数，如果我们某个函数只是希望使用一次，可以考虑使用匿名函数，匿名函数也可以实现多次调用。
 
+​		1、在定义匿名函数时就直接调用，这种方式匿名函数只能调用一次
+
+```go
+func main(){
+	
+	res := func(n1 int,n2 int) int {
+		return n1 + n2
+	}(10,20)
+	
+	fmt.Println("res = ",res)
+}
+```
+
+​		2、将匿名函数赋给一个变量（函数变量），再通过该变量来调用匿名函数
+
+```go
+func main(){
+	a := func(n1 int,n2 int) int{
+		return n1 - n2
+	}
+
+	res := a(33,22)
+	fmt.Println("res = ",res)
+}
+```
+
+​		3、全局匿名函数：将匿名函数赋给一个全局变量
+
+```go
+var (
+    Func = func(n1 int ,n2 int) int {
+        return n1 * n2
+    }
+)
+
+func main(){
+    res := Func(2,4)
+    fmt.Println("res = ",res)
+}
+```
 
 
 
