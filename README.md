@@ -831,11 +831,11 @@ func main(){
 
 ​		3、在defer将语句放入栈时，也会将相关的值拷贝同时入栈。
 
-![1612099467733](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1612099467733.png)
+![1612099467733](src/images/1612099467733.png)
 
 执行结果
 
-![1612099480425](C:\Users\15761\AppData\Roaming\Typora\typora-user-images\1612099480425.png)
+![1612099480425](src/images/1612099480425.png)
 
 ​		
 
