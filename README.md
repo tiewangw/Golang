@@ -780,7 +780,40 @@ func main(){
 
 
 
+##### 12.5 闭包
 
+​		闭包允许函数把它的本地变量共享给这个函数内的匿名函数。
+
+​		闭包的说明：
+
+​		1、可以理解成：闭包是类，内部匿名函数是操作。匿名函数和它使用到的共享变量构成闭包。
+
+​		2、调用函数时，共享变量只初始化一次，之后每次调用都是累计调用。
+
+```go
+package main
+
+import "fmt"
+
+//闭包
+func addClosure() func (int) string {
+	var  str  =  "hello"
+	return func (n int) string{
+		str += string(n)
+		return str
+	}
+}
+
+
+func main(){
+	f := addClosure()
+    // ascii码 36->$
+	fmt.Println(f(36))  //hello$
+	fmt.Println(f(36))	//hello$$
+	fmt.Println(f(36))	//hello$$$
+
+}
+```
 
 
 
